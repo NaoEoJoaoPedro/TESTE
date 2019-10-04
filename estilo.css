@@ -1,0 +1,136 @@
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+/* genérico */
+.m150 {
+    margin-top: 150px;
+}
+.wid100 {
+    width: 100%;
+    background: white;
+}
+.h300 {
+    height: 300px;
+}
+.bg-white {
+    background-color: white;
+}
+.white {
+    color:white;
+}
+.bg-trans {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* navBar */
+.whiteBorderBottom {
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.navbar-theme a {
+    color: whitesmoke;
+}
+
+.navbar-theme a:hover {
+    border-top: 2px solid white;
+}
+
+.navbar-theme .active a {
+    border-bottom: 2px solid white;
+}
+
+
+/* navBar Links */
+.paddingLi li {
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+.paddingLi a {
+    border: 2px solid black;
+}
+
+.contato {
+    border: 2px solid white !important;
+    border-radius: 50px !important;
+    padding: 10px 50px !important;
+}
+
+.contato:hover {
+    background: white;
+    color: black;
+}
+@media only screen and (max-width: 991px) {
+    .contato {
+        border:none;
+        padding: 0px 0px !important;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .contato:hover {
+        background-color: black;
+
+    }
+    .paddingLi a {
+        border:none !important;
+    }
+} 
+
+
+
+
+
+/* main  */
+.foto {
+    box-shadow: 0px 0px 300px rgb(230, 138, 17);
+    width: 100%;
+}
+
+.shadow {
+    box-shadow: 0px 0px 300px rgb(230, 138, 17);
+}
+.shadowGreen {
+    box-shadow: 0px 0px 300px rgb(113, 230, 17);
+}
+.imagebackground {
+    background-image: url(img/img2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: inset 0px 0px 300px black;
+    background-color: black;
+}
+.ceter {
+    position: relative;
+    top: 50%;
+    text-shadow: 2px 2px 3px black;
+}
+.textolado {
+    color: black;
+}
+@media only screen and (max-width: 1000px) {
+    .textolado {
+        /* margin-top: 20px !important; */
+        color: black;
+        /* ^^^ so para parar de exibir alerta no VSCode */
+    }
+}
+
+/* footer */
+
+footer a {
+    color: white;
+    
+
+}
+footer a:hover {
+    color: rgb(230, 138, 17);
+    text-decoration: none;
+}
+.socialicon span i {
+    font-size: 90px;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- icones -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Meu CSS -->
+    <link rel="stylesheet" href="estilo.css">
+    <!-- Juros CSS -->
+    <link rel="stylesheet" href="juros.css">
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <!-- meu JS -->
+    
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <div class="whiteBorderBottom">
+        <nav class="navbar navbar-expand-lg navbar-theme  container">
+            <!-- Marca -->
+            <a class="navbar-brand" href="#">Navbar</a>
+            <!-- Botão Hamburger Menu -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars white"></i>
+            </button>
+            <!-- Links -->
+            <div class="collapse navbar-collapse paddingLi" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="juros_compostos.html">Calculadora<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  contato" href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- fim links -->
+        </nav>
+        <!-- fim navbar -->
+    </div>
+
+    <!-- seção tipo 1 -->
+    <section>
+        <!-- container -->
+        <div class="container m150 text-center">
+            <!-- row -->
+            <div class="row">
+                <!-- titulo -->
+                <div class="tituloFoto col">
+                    <h1>Selecione uma Cor
+                        <input type="color" name="corbg" id="corbg">
+                        <button onclick="mudarCor()" class="btn btn-lg btn-danger">Mudar!</button>
+                    </h1>
+
+                    <h1>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. pellat, saepe omnis er.
+                    </h1>
+                    <!-- texto -->
+                    <p class="mt-5">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, molestias nulla recusandae autem
+                        soluta nemo. Ut quaerat quam aut vero. Obcaecati, maxime. Odit excepturi aspernatur fuga.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem provident sed rerum deleniti
+                        sit optio magni, et ullam vitae cupiditate soluta reiciendis, repellat, blanditiis perferendis
+                        aliquam itaque. Voluptas, quisquam vero.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, eveniet ipsa recusandae
+                        numquam saepe asperiores nostrum maxime magnam, repudiandae a ipsum commodi ab vel deserunt sed
+                        repellendus consequuntur eius? Facere?
+                    </p>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row justify-content-center">
+                <!-- imagem gráfico dinheiro -->
+                <picture class="mt-5 d-flex col-12 col-md-8 w-100 p-0">
+                    <img id="bg"  class="shadowGreens  w-100" src="img/bar-british-coins-coins-50545.jpg" alt="">
+                </picture>
+            </div>
+            <!-- row -->
+            <!-- inputs de dados para a calculadora -->
+            <div class="row justify-content-md-between justify-content-center juros-input mt-5">
+                <!-- Investimento -->
+                <div class="col-sm-12 mt-2 col-lg-4">
+                    <h4> Dinheiro Aplicado</h4>
+                    <input id="investido" class="mb-2" type="number">
+                    <!--  -->
+                    <h4> Aporte Mensal</h4>
+                    <input id="aporte" type="number">
+                </div>
+                <!-- juros -->
+                <div class="mt-2 col-sm-12 col-lg-4">
+                    <h4> Taxa de Juros</h4>
+                    <input id="juros" type="number">
+                    <br>
+                    <select id="select-juro">
+                        <option value="mes">Mensal</option>
+                        <option value="ano">Anual</option>
+                    </select>
+                </div>
+                <!-- Período -->
+                <div class="mt-2 col-sm-12 col-lg-4">
+                    <h4> Tempo </h4>
+                    <input id="periodo" type="number">
+                    <br>
+                    <select id="select-periodo">
+                        <option value="mes">Meses</option>
+                        <option value="ano">Anos</option>
+                    </select>
+                </div>
+            </div>
+            <!-- row -->
+            <!-- botão calcular -->
+            <div class="row justify-content-center mt-4">
+                <div class=" ml-md-auto col-lg-4">
+                    <a href="#resultado">
+                        <button onclick=" ameba()" class="botao-calcular ">Calcular</button>
+                    </a>
+
+                </div>
+            </div>
+            <!-- row -->
+            <!-- Total os dados são inseridos pelo js -->
+            <div class="row mt-5 justify-content-center">
+                <div>
+                    <h3 id="resultado"></h3>
+                </div>
+            </div>
+            <!-- row -->
+            <!-- Gráfico inserido pelo js -->
+            <div class="row mt-5">
+                <canvas id="myChart"></canvas>
+            </div>
+            <!-- row -->
+            <!-- Tabela dados inseridos pelo js -->
+            <div class="row mt-5" style="overflow-x:auto">
+                <table id="tabela" class="tabela">
+
+                </table>
+            </div>
+        </div>
+        <!-- ^ container -->
+    </section>
+
+    <!-- footer -->
+    <footer class="m150 mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-12 socialicon text-center d-flex justify-content-between">
+                    <!-- facebook -->
+                    <a href="">
+                        <span>
+                            <i class="fab fa-facebook-f"></i>
+                            <br>
+                            Facebook
+                        </span>
+                    </a>
+                    <!-- twitter -->
+                    <a href="">
+                        <span>
+                            <i class="fab fa-twitter"></i>
+                            <br>
+                            Twitter
+                        </span>
+                    </a>
+                    <!-- instagram -->
+                    <a href="">
+                        <span>
+                            <i class="fab fa-instagram"></i>
+                            <br>
+                            Instagram
+                        </span>
+                    </a>
+                    <!-- fim links -->
+                </div>
+                <!-- fim div links -->
+            </div>
+            <!-- fim row -->
+        </div>
+        <!-- fim container -->
+    </footer>
+
+
+
+    <script src="js.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
